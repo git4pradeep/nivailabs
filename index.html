@@ -162,7 +162,9 @@
             gap: 5px;
             background: none;
             border: none;
-            padding: 0;
+            padding: 0.5rem;
+            z-index: 101;
+            position: relative;
         }
 
         .hamburger span {
@@ -171,6 +173,7 @@
             background: var(--white);
             border-radius: 2px;
             transition: all 0.3s;
+            display: block;
         }
 
         .hamburger.active span:nth-child(1) {
@@ -258,7 +261,7 @@
 
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 65px;
                 left: 0;
                 right: 0;
                 background: linear-gradient(135deg, #001a4d 0%, #003d99 100%);
@@ -266,12 +269,14 @@
                 gap: 0;
                 padding: 0;
                 max-height: 0;
-                overflow: hidden;
+                overflow-y: auto;
                 transition: max-height 0.3s ease;
                 border: none;
                 border-top: 1px solid rgba(100, 200, 255, 0.15);
-                z-index: 99;
-                width: 100vw;
+                z-index: 100;
+                width: 100%;
+                margin: 0;
+                list-style: none;
             }
 
             .nav-links.active {
@@ -1013,8 +1018,6 @@
             });
         });
 
-        // Simple mobile menu toggle (if needed in future)
-        const navLinks = document.querySelector('.nav-links');
     </script>
 </body>
 </html>
