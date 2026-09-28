@@ -437,6 +437,67 @@
             font-size: 0.9rem;
         }
 
+        /* Team Section */
+        #team {
+            background: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+            justify-items: center;
+        }
+
+        .team-member {
+            background: var(--light-gray);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 320px;
+            transition: all 0.3s;
+            border: 1px solid var(--border-gray);
+        }
+
+        .team-member:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1.5rem;
+            color: var(--white);
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-bio {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -465,6 +526,7 @@
                 <li><a href="#solutions">Solutions</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#team">Team</a></li>
                 <li><a href="#contact" class="cta-button">Get Started</a></li>
             </ul>
         </nav>
@@ -605,6 +667,28 @@
                     <div class="testimonial-text">"The team's understanding of our business needs and AI capabilities was exceptional. Highly recommended for any enterprise AI initiative."</div>
                     <div class="testimonial-author">Emma Williams</div>
                     <div class="testimonial-company">Director of Digital Innovation, FinanceHub</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <h2>Meet Our Leadership</h2>
+            <p class="section-subtitle">Visionary leaders driving innovation at Niv AI</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar">👔</div>
+                    <h3>Ashok</h3>
+                    <div class="team-role">CEO & Founder</div>
+                    <p class="team-bio">Visionary leader with decades of experience in enterprise AI and digital transformation. Passionate about building world-class AI solutions that drive real business impact.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">👨‍💻</div>
+                    <h3>Raghu</h3>
+                    <div class="team-role">CTO & Co-Founder</div>
+                    <p class="team-bio">Technical architect with expertise in machine learning, software infrastructure, and scalable AI systems. Leads the innovation and technical excellence across all projects.</p>
                 </div>
             </div>
         </div>
