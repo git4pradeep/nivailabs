@@ -61,16 +61,34 @@
             display: flex;
             align-items: center;
             gap: 0.6rem;
-            font-size: 1.8rem;
-            font-weight: 700;
             text-decoration: none;
-            white-space: nowrap;
             flex-shrink: 0;
-            letter-spacing: -0.5px;
+        }
+
+        .logo-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .logo-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            line-height: 1;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .logo-tagline {
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #a0d4ff;
+            margin-top: 0.2rem;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .logo img {
-            height: 30px;
             width: auto;
             object-fit: contain;
         }
@@ -608,12 +626,14 @@
     <header>
         <nav>
             <a href="#" class="logo">
-                <img src="/images/logo.png" alt="Niv AI">
-                <span class="logo-text">
-                    <span class="logo-niv">Niv</span>
-                    <span class="logo-ai">AI</span>
-                </span>
-                <span class="logo-labs">Labs</span>
+                <img src="/images/logo.png" alt="Niv AI" style="height: 45px; width: auto;">
+                <div class="logo-content">
+                    <div class="logo-title">
+                        <span class="logo-niv">Niv</span><span class="logo-ai">AI</span>
+                        <span class="logo-labs">Labs</span>
+                    </div>
+                    <div class="logo-tagline">Build • Innovate • Transform</div>
+                </div>
             </a>
             <ul class="nav-links">
                 <li><a href="#solutions">Solutions</a></li>
