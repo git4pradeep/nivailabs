@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niv AI - Enterprise AI Solutions & Products</title>
+    <meta name="description" content="Niv AI provides cutting-edge AI services and products for enterprises. Transform your business with custom AI solutions.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0066ff;
+            --dark-gray: #1a1a1a;
+            --light-gray: #f5f5f5;
+            --border-gray: #e0e0e0;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-gray);
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links .cta-button {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .nav-links .cta-button:hover {
+            background: #0052cc;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            nav {
+                padding: 1rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f5f5 0%, var(--white) 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #0052cc;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: #f0f7ff;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--dark-gray);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Solutions Section */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .solution-card {
+            background: var(--white);
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .solution-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark-gray);
+        }
+
+        .solution-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-card a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .solution-card a:hover {
+            gap: 0.5rem;
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-gray);
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Why Choose Us */
+        #why-us {
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-box {
+            padding: 2rem;
+            background: var(--light-gray);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .feature-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark-gray);
+        }
+
+        .feature-box p {
+            color: var(--text-light);
+        }
+
+        /* CTA Section */
+        #cta {
+            background: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        #cta h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        #cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-blue);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial {
+            background: var(--white);
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-company {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-wrap: wrap;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .solutions-grid,
+            .services-grid,
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Niv AI</a>
+            <ul class="nav-links">
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact" class="cta-button">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Transform Your Business with AI</h1>
+        <p>Enterprise-grade AI solutions and products designed to solve real-world challenges and drive measurable results.</p>
+        <div class="hero-buttons">
+            <button class="btn btn-primary">Start Your AI Journey</button>
+            <button class="btn btn-secondary">Learn More</button>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions">
+        <div class="container">
+            <h2>Our AI Solutions</h2>
+            <p class="section-subtitle">Comprehensive AI services tailored to your business needs</p>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">🤖</div>
+                    <h3>Custom AI Development</h3>
+                    <p>Build bespoke AI models and systems tailored to your specific business challenges and objectives.</p>
+                    <a href="#contact">Explore →</a>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">🧠</div>
+                    <h3>Machine Learning Solutions</h3>
+                    <p>Deploy advanced ML algorithms for predictive analytics, classification, and optimization.</p>
+                    <a href="#contact">Explore →</a>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">💬</div>
+                    <h3>NLP & Language Models</h3>
+                    <p>Leverage natural language processing for chatbots, text analysis, and content understanding.</p>
+                    <a href="#contact">Explore →</a>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">👁️</div>
+                    <h3>Computer Vision</h3>
+                    <p>Image recognition, object detection, and visual analytics for diverse industry applications.</p>
+                    <a href="#contact">Explore →</a>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">📊</div>
+                    <h3>Data Analytics</h3>
+                    <p>Transform raw data into actionable insights with advanced analytics and visualization.</p>
+                    <a href="#contact">Explore →</a>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">⚙️</div>
+                    <h3>AI Integration</h3>
+                    <p>Seamlessly integrate AI capabilities into your existing systems and workflows.</p>
+                    <a href="#contact">Explore →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>How We Work</h2>
+            <p class="section-subtitle">Three flexible engagement models to suit your needs</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>✓ Fully Managed</h3>
+                    <p>We handle your entire AI project from discovery to deployment. Our team manages all aspects of development, testing, and deployment while you focus on your core business.</p>
+                </div>
+                <div class="service-card">
+                    <h3>✓ Dedicated Team</h3>
+                    <p>Work with a dedicated team of AI specialists who integrate seamlessly with your organization. Long-term partnership with consistent team members and deep product knowledge.</p>
+                </div>
+                <div class="service-card">
+                    <h3>✓ Augmented Staff</h3>
+                    <p>Extend your existing team with expert AI engineers and data scientists. Flexible hiring model for specific projects or ongoing support with minimal overhead.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us">
+        <div class="container">
+            <h2>Why Choose Niv AI</h2>
+            <p class="section-subtitle">Industry expertise meets cutting-edge technology</p>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>🎯 Proven Track Record</h3>
+                    <p>Delivered successful AI projects across Fortune 500 companies and innovative startups with measurable business impact.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🔬 Advanced Technology</h3>
+                    <p>Access to latest AI frameworks, models, and tools. Stay ahead with cutting-edge research and implementations.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>👥 Expert Team</h3>
+                    <p>Engineers, data scientists, and AI researchers with deep domain expertise in finance, healthcare, retail, and manufacturing.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>⏱️ Fast Delivery</h3>
+                    <p>Agile development methodology ensures rapid prototyping and quick time-to-market for your AI solutions.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🔐 Security First</h3>
+                    <p>Enterprise-grade security, compliance with regulations (GDPR, HIPAA), and data privacy protection.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>📈 ROI Focused</h3>
+                    <p>Every project is aligned with clear business objectives. We measure success by your metrics and deliver real value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" style="background: var(--light-gray);">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <p class="section-subtitle">Trust from industry leaders</p>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"Niv AI transformed our operations with their custom ML solution. The results exceeded our expectations and the ROI was achieved in the first quarter."</div>
+                    <div class="testimonial-author">Sarah Johnson</div>
+                    <div class="testimonial-company">VP of Operations, TechCorp</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"Working with the Niv AI team was seamless. Their expertise in computer vision helped us automate quality control with 95% accuracy."</div>
+                    <div class="testimonial-author">Michael Chen</div>
+                    <div class="testimonial-company">CTO, Manufacturing Solutions Inc</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"The team's understanding of our business needs and AI capabilities was exceptional. Highly recommended for any enterprise AI initiative."</div>
+                    <div class="testimonial-author">Emma Williams</div>
+                    <div class="testimonial-company">Director of Digital Innovation, FinanceHub</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's discuss how AI can drive growth and efficiency for your organization.</p>
+            <button class="btn btn-secondary" style="border-color: var(--white); color: var(--primary-blue); background: var(--white);">Get In Touch Today</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Niv AI</h4>
+                <p>Enterprise AI solutions for the modern business.</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com" target="_blank">Twitter</a>
+                    <a href="https://github.com" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="#solutions">Custom AI Development</a></li>
+                    <li><a href="#solutions">Machine Learning</a></li>
+                    <li><a href="#solutions">NLP Services</a></li>
+                    <li><a href="#solutions">Computer Vision</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#docs">Documentation</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Niv AI. All rights reserved. | <a href="#privacy" style="color: rgba(255, 255, 255, 0.7);">Privacy Policy</a> | <a href="#terms" style="color: rgba(255, 255, 255, 0.7);">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for buttons
+        document.querySelectorAll('button[class*="btn"]').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = this.getAttribute('data-target') || '#contact';
+                const element = document.querySelector(target);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // Fallback: show contact info
+                    alert('Contact: hello@nivailabs.online');
+                }
+            });
+        });
+
+        // Simple mobile menu toggle (if needed in future)
+        const navLinks = document.querySelector('.nav-links');
+    </script>
+</body>
+</html>
