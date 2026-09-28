@@ -1,0 +1,26 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="128" fill="#0066ff"/>
+
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="nGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e6f0ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Stylish N letter -->
+  <g transform="translate(128, 128)">
+    <!-- Left vertical line of N -->
+    <rect x="-45" y="-60" width="16" height="120" fill="url(#nGradient)" rx="8"/>
+
+    <!-- Right vertical line of N -->
+    <rect x="29" y="-60" width="16" height="120" fill="url(#nGradient)" rx="8"/>
+
+    <!-- Diagonal line of N -->
+    <g transform="translate(-37, -60)">
+      <line x1="0" y1="0" x2="82" y2="120" stroke="url(#nGradient)" stroke-width="16" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
